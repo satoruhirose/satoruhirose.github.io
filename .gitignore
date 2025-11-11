@@ -1,0 +1,29 @@
+# === OS / Editor ===
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.log
+*.bak
+*.lock
+
+# === macOS metadata ===
+.AppleDouble
+.LSOverride
+Icon?
+
+# === Node / npm ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Build / Cache ===
+dist/
+build/
+.cache/
+out/
+
+# === Optional: local test files ===
+*.local.html
+*.test.*
