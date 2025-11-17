@@ -3,6 +3,7 @@ const BASE_PATH = "./contents/images"; // directory containing 1.svg, 2.svg, ...
 const EXT = "svg";
 const START_INDEX = 1;
 const MAX_AUTO_DETECT = 200; // upper bound for auto detection (change if needed)
+const SCROLL_PER_IMAGE_VH = 70; // scroll distance per image transition (smaller = faster transition)
 
 /* DOM refs */
 const stage = document.getElementById("stage");
@@ -123,9 +124,10 @@ function createCrossfadeController(images) {
       return;
     }
 
-    // Set stage height dynamically = (n-1) * 100vh
+    // Set stage height dynamically: n images → (approx) SCROLL_PER_IMAGE_VH each
     const n = urls.length;
-    stage.style.height = `${Math.max((n - 1) * 100, 0)}vh`;
+    const stageHeightVH = Math.max(n * SCROLL_PER_IMAGE_VH, 100); // keep at least one viewport tall
+    stage.style.height = `${stageHeightVH}vh`;
 
     // Build images and start crossfade controller
     const images = buildImageStack(urls);

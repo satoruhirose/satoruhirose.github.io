@@ -12,7 +12,7 @@ body {
 /* Scroll section (height will be updated via JS based on detected image count) */
 .stage {
     /* Fallback height before JS updates it */
-    height: 100vh;
+    height: 120vh;
 }
 
 /* Sticky container (fixed to viewport) */
